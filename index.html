@@ -10,8 +10,9 @@
       Input2 : <input type="text" id ="two" /> <br><br> +
       Input3 : <input type="text" id ="three"/> <br><br> =
       </form>
+      <output id = "out"></output> <br><br>
        <input type="submit" onClick = "showInput()">
-      <output id = "out"></output>
+
       <script language = "JavaScript">
       function showInput() {
         document.getElementById("out").innerHTML = document.getElementById("one").value + document.getElementById("two").value + document.getElementById("three").value;
