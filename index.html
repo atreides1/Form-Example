@@ -6,16 +6,30 @@
   <body>
 
       <form>
-      Input1 : <input type="text" id ="one" /> <br><br> +
-      Input2 : <input type="text" id ="two" /> <br><br> +
-      Input3 : <input type="text" id ="three"/> <br><br> =
+      Input1 : <input type="number" id ="one" /> <br><br> +
+      Input2 : <input type="number" id ="two" /> <br><br> +
+      Input3 : <input type="number" id ="three"/> <br><br> =
       </form>
       <output id = "out"></output> <br><br>
-       <input type="submit" onClick = "showInput()">
+       <input type="submit" onClick = "checkInput()">
 
       <script language = "JavaScript">
-      function showInput() {
-        document.getElementById("out").innerHTML = document.getElementById("one").value + document.getElementById("two").value + document.getElementById("three").value;
+      function checkInput() {
+        var checkOne = Number(document.getElementById("one").value) + Number(document.getElementById("two").value) > Number(document.getElementById("three").value);
+
+        var checkTwo = Number(document.getElementById("one").value) + Number(document.getElementById("three").value) > Number(document.getElementById("two").value);
+
+        var checkThree = Number(document.getElementById("two").value) + Number(document.getElementById("three").value) > Number(document.getElementById("one").value);
+        
+        if (checkOne && checkTwo && checkThree)
+        {
+          document.getElementById("out").innerHTML = "Valid";
+        }
+        else
+        {
+          document.getElementById("out").innerHTML = "Invalid";
+        }
+        //document.getElementById("out").innerHTML = document.getElementById("one").value + document.getElementById("two").value + document.getElementById("three").value;
       }
       </script>
   </body>
